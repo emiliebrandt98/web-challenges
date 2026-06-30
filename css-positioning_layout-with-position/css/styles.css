@@ -23,6 +23,9 @@ body {
   color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
   padding: 10px 30px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
 }
 
 .header__subheading {
@@ -43,6 +46,9 @@ body {
   height: 48px;
   color: #ffffff;
   background: #370182;
+  position: fixed;
+  bottom: 0;
+  padding: 10px 30px;
 }
 
 /**
@@ -57,6 +63,7 @@ body {
   background-color: #ebddfa;
   scroll-margin-top: 150px;
   border-radius: 5px;
+  position: relative;
 }
 
 .card__heading {
@@ -74,6 +81,10 @@ body {
   padding: 6px 12px;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px 10px 0 0;
 }
 
 /**
@@ -87,4 +98,7 @@ body {
   border-radius: 5px;
   background-color: #ff4a11;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  bottom: 70px;
+  z-index: 10;
 }
