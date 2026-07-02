@@ -9,8 +9,6 @@ body {
   font-family: system-ui;
 }
 
-
-
 .image-board__container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -18,6 +16,11 @@ body {
   gap: 1rem;
   padding: 1rem;
   /* Add styles here */
+  display: grid;
+  grid-template-areas:
+    "b1 b2 b3"
+    "b4 b2 b5"
+    "b4 b6 b5";
 }
 
 .image-board__image {
@@ -25,29 +28,37 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 14px;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  box-shadow:
+    rgba(0, 0, 0, 0.12) 0px 1px 3px,
+    rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .image-board__image--1 {
   /* Add styles here */
+  grid-area: b1;
 }
 
 .image-board__image--2 {
   /* Add styles here */
+  grid-area: b4;
 }
 
 .image-board__image--3 {
   /* Add styles here */
+  grid-area: b3;
 }
 
 .image-board__image--4 {
   /* Add styles here */
+  grid-area: b2;
 }
 
 .image-board__image--5 {
   /* Add styles here */
+  grid-area: b6;
 }
 
 .image-board__image--6 {
   /* Add styles here */
+  grid-area: b5;
 }

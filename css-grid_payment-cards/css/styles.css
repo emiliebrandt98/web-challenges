@@ -23,34 +23,39 @@
 }
 
 body {
-  margin: 0;
   font-family: system-ui;
-  background-color: var(--primary-dark);
+
+  background-color: var(--grey-dark);
 }
 
-.fish {
-  width: 20rem;
-  margin: 2rem auto;
+.cards {
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 50rem;
 
   /* Add styles to the container */
   display: grid;
-  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.fish__text {
-  padding: 1rem;
-  margin: 0 0 2rem 0;
-  background-color: var(--secondary);
+.cards__option {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 6px;
 }
 
-.fish__headline {
+.cards__option--highlight {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.cards__name {
   margin: 0 0 1rem 0;
+  font-size: 1rem;
 }
 
-.fish__icon {
-  display: block;
-  font-size: 3rem;
-  padding: 1rem;
-  margin: 0 0 2rem 0;
-  background-color: var(--secondary);
+.cards__price {
+  font-size: 2.5rem;
+  font-weight: bold;
 }
