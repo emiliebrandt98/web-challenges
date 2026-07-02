@@ -1,0 +1,8 @@
+.footer {
+  position: sticky;
+  bottom: 0;
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 20px;
+  width: 100%;
+}

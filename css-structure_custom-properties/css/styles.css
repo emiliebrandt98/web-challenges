@@ -3,6 +3,7 @@
 *::after {
   box-sizing: border-box;
 }
+
 :root {
   --color-granite: #252629;
   --color-nemo: #ff4a11;

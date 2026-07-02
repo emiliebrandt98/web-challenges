@@ -20,7 +20,7 @@
   font-weight: bold;
 }
 
-.info-card__list .info-card__text-highlighted {
+.info-card__list--text-highlighted {
   color: var(--text-highlight);
   background-color: var(--background-highlight);
   padding: 3px 5px;
