@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -56,7 +56,21 @@
           </p>
           <div class="box box--five">
             <!-- You might want to use the <picture> element here. -->
-            <img src="./img/cat_small.jpg" alt="A cat" />
+            <picture>
+              <source
+                media="(min-width: 1200px)"
+                srcset="
+                  https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=724&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+                "
+              />
+              <source
+                media="(min-width: 600px)"
+                srcset="
+                  https://images.unsplash.com/photo-1493579706121-60161eb06eeb?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+                "
+              />
+              <img src="./img/cat_small.jpg" alt="A cat" />
+            </picture>
           </div>
         </section>
       </section>

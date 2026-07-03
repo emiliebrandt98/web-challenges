@@ -141,6 +141,7 @@ body {
   font-size: var(--regular-text);
   line-height: var(--regular-text-line-height);
   width: 70%;
+  grid-area: text;
 }
 
 .card-section {
@@ -166,26 +167,31 @@ body {
 .--forest {
   background-image: url("../img/forest.jpg");
   background-size: cover;
+  grid-area: forest;
 }
 
 .--mountain {
   background-image: url("../img/mountain.jpg");
   background-size: cover;
+  grid-area: mountain;
 }
 
 .--river {
   background-image: url("../img/river.jpg");
   background-size: cover;
+  grid-area: river;
 }
 
 .--ocean {
   background-image: url("../img/ocean.jpg");
   background-size: cover;
+  grid-area: ocean;
 }
 
 .--desert {
   background-image: url("../img/desert.jpg");
   background-size: cover;
+  grid-area: desert;
 }
 
 .card-title {
@@ -240,10 +246,31 @@ CSS based on conditions such as viewport width, etc. */
 
 /* Media Query Tablet */
 /* --- */
-/* Replace this comment with your media query. */
+@media screen and (min-width: 900px) {
+  .card-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "forest text"
+      "mountain river"
+      "ocean desert";
+    gap: var(--gap) var(--gap);
+    padding: var(--gap);
+  }
+
+  .product-card {
+    width: 100%;
+  }
+
+  .intro-text {
+    align-self: start;
+    width: 100%;
+  }
+}
 /* --- */
 
 /* Media Query Desktop */
 /* --- */
-/* Replace this comment with your media query. */
+@media screen and (min-width: 1200px) {
+}
 /* --- */
