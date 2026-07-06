@@ -141,7 +141,6 @@ body {
   font-size: var(--regular-text);
   line-height: var(--regular-text-line-height);
   width: 70%;
-  grid-area: text;
 }
 
 .card-section {
@@ -167,31 +166,26 @@ body {
 .--forest {
   background-image: url("../img/forest.jpg");
   background-size: cover;
-  grid-area: forest;
 }
 
 .--mountain {
   background-image: url("../img/mountain.jpg");
   background-size: cover;
-  grid-area: mountain;
 }
 
 .--river {
   background-image: url("../img/river.jpg");
   background-size: cover;
-  grid-area: river;
 }
 
 .--ocean {
   background-image: url("../img/ocean.jpg");
   background-size: cover;
-  grid-area: ocean;
 }
 
 .--desert {
   background-image: url("../img/desert.jpg");
   background-size: cover;
-  grid-area: desert;
 }
 
 .card-title {
@@ -250,20 +244,13 @@ CSS based on conditions such as viewport width, etc. */
   .card-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "forest text"
-      "mountain river"
-      "ocean desert";
-    gap: var(--gap) var(--gap);
-    padding: var(--gap);
+    align-items: start;
+    gap: var(--gap) calc(var(--gap) * 2);
+    padding: 0 20px;
   }
 
-  .product-card {
-    width: 100%;
-  }
-
+  .product-card,
   .intro-text {
-    align-self: start;
     width: 100%;
   }
 }
@@ -272,5 +259,30 @@ CSS based on conditions such as viewport width, etc. */
 /* Media Query Desktop */
 /* --- */
 @media screen and (min-width: 1200px) {
+  body,
+  .main-header,
+  .navbar {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card-section {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .product-card,
+  .intro-text {
+    grid-column: span 2;
+  }
+
+  .--forest {
+    grid-column: 1 / 5;
+    height: 400px;
+  }
+
+  .--desert {
+    grid-column: 2 / span 2;
+  }
 }
 /* --- */
