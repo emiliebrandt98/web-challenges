@@ -17,44 +17,32 @@ Hint: You can combine text and variables using the `+` operator.
 💡 For simplicity, ignore leap years.
 */
 
-const yearsPracticing = Number(process.argv[2]); // This takes the `<years>` entered in the command `node index.js <years>`.
+const yearsPracticing = process.argv[2]; // This takes the `<years>` entered in the command `node index.js <years>`.
 
 console.log("You've been practicing for: " + yearsPracticing + " years");
 
 // Constants
-// const totalDays = yearsPracticing * 365;
-// const milestone = 10 * 365;
-// const remainingDays = milestone - totalDays;
-// const milestonePercentage = (totalDays / milestone) * 100;
-// const totalHours = totalDays;
-
 const hoursPerDay = 24;
 const practiceHoursPerDay = 1;
 const milestoneYears = 10;
 const daysInAYear = 365;
 
-// totalDays
-const totalDays = yearsPracticing * daysInAYear;
-console.log("That's about " + totalDays + " days of practice.");
+const daysPracticing = yearsPracticing * daysInAYear;
+console.log("That's about " + daysPracticing + " days of practice.");
 
-// remainingDays
 const remainingDays = (milestoneYears - yearsPracticing) * daysInAYear;
+console.log("Days left to reach " + milestoneYears + " years: " + remainingDays);
+
+const percentage = (daysPracticing / (milestoneYears * daysInAYear)) * 100;
 console.log(
-  "Days left to reach " + milestoneYears + " years: " + remainingDays,
+  "You've completed approximately " + percentage + "% of your milestone."
 );
 
-// milestonePercentage
-const percentage = (totalDays / (milestoneYears * daysInAYear)) * 100;
-console.log(
-  "You've completed approximately " + percentage + "% of your milestone.",
-);
-
-// totalHours
-const totalHours = (totalDays + practiceHoursPerDay) / hoursPerDay;
+const practiceDaysTotal = (daysPracticing * practiceHoursPerDay) / hoursPerDay;
 console.log(
   "At " +
     practiceHoursPerDay +
     " hour/day, that's about " +
-    totalHours +
-    " full days of total practice time.",
+    practiceDaysTotal +
+    " full days of total practice time."
 );
