@@ -11,6 +11,12 @@ console.clear();
 
 // --v-- write your code here --v--
 
+const postTitle = "Good Morning!";
+const postText = "It is a wonderful day!";
+let receivedLikes = 53;
+const userName = "Jane.Muster";
+const isReported = true;
+
 // --^-- write your code here --^--
 
 /*
@@ -18,5 +24,12 @@ console.clear();
 */
 
 // --v-- write your code here --v--
+
+console.log(postTitle, postText, receivedLikes, userName, isReported);
+
+console.clear();
+
+receivedLikes += 1;
+console.log(postTitle, postText, receivedLikes, userName, isReported);
 
 // --^-- write your code here --^--
