@@ -1,4 +1,4 @@
-@import './variables.css';
+@import "./variables.css";
 
 *,
 *::before,
@@ -50,7 +50,7 @@ h1 {
   justify-content: center;
 }
 
-.mathematical-operations>.button {
+.mathematical-operations > .button {
   width: 8.5rem;
 }
 
@@ -61,6 +61,6 @@ h1 {
   align-items: center;
 }
 
-.update-operand>.button {
+.update-operand > .button {
   width: 20rem;
 }
