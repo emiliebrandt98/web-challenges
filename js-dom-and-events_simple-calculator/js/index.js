@@ -1,7 +1,7 @@
 console.clear();
 
 let operand1 = 12;
-let operand2 = 4;
+const operand2 = 4;
 
 // ----- Mathematical Operations -----
 
@@ -99,27 +99,27 @@ Step 2: Add event listeners to update `operand1` based on the button clicked. Lo
 
 // --v-- write your code here --v--
 increaseByOneButton.addEventListener("click", () => {
-  operand1 = operand1 + 1;
+  operand1++;
   console.log(operand1);
 });
 increaseByFiveButton.addEventListener("click", () => {
-  operand1 = operand1 + 5;
+  operand1 += 5;
   console.log(operand1);
 });
 decreaseByOneButton.addEventListener("click", () => {
-  operand1 = operand1 - 1;
+  operand1--;
   console.log(operand1);
 });
 decreaseByFiveButton.addEventListener("click", () => {
-  operand1 = operand1 - 5;
+  operand1 -= 5;
   console.log(operand1);
 });
 multiplyByTwoButton.addEventListener("click", () => {
-  operand1 = operand1 * 2;
+  operand1 *= 2;
   console.log(operand1);
 });
 divideByTwoButton.addEventListener("click", () => {
-  operand1 = operand1 / 2;
+  operand1 /= 2;
   console.log(operand1);
 });
 // --^-- write your code here --^--
