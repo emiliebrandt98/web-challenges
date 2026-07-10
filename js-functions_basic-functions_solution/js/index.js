@@ -9,10 +9,11 @@ console.clear();
 */
 
 // --v-- write your code here --v--
-const bookTitle = "Mobydick";
-const bookAuthor = "Herman Melville";
-let bookRating = 4.5;
-let bookCopys = 4500;
+
+const title = "Learning Javascript for Smarties";
+const author = "Merle Mak";
+let rating = 5;
+let numberOfSales = 23345;
 
 // --^-- write your code here --^--
 
@@ -31,12 +32,24 @@ Then:
 */
 
 // --v-- write your code here --v--
+
+// console.log(`Title: ${title}`);
+// console.log("Author: " + author);
+// console.log("Rating: " + rating);
+// console.log("Number of Sales: " + numberOfSales);
+
 logBookData();
 
-bookRating = 4.7;
-bookCopys += 250;
+numberOfSales = numberOfSales + 1000;
+rating = 7;
+
+// console.log(`Title: ${title}`);
+// console.log("Author: " + author);
+// console.log("Rating: " + rating);
+// console.log("Number of Sales: " + numberOfSales);
 
 logBookData();
+
 // --^-- write your code here --^--
 
 /*
@@ -50,13 +63,14 @@ logBookData();
 
 // --v-- write your code here --v--
 function logBookData() {
-  console.log(
-    bookTitle + ", " + bookAuthor + ", " + bookRating + ", " + bookCopys,
-  );
+  console.log(title + ", " + author + ", " + rating + ", " + numberOfSales);
+  // console.log(`${title} ${author} ${rating} ${numberOfSales})
 }
 
-bookCopys += 500;
+numberOfSales = numberOfSales + 500;
 logBookData();
-bookCopys += 650;
+
+numberOfSales = numberOfSales + 1000;
 logBookData();
+
 // --^-- write your code here --^--
