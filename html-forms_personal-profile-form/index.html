@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -9,5 +9,49 @@
     <title>Personal Profile Form</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body></body>
+
+  <body>
+    <h1 id="title">Create your Personal Profile</h1>
+    <form aria-labelledby="title">
+      <fieldset>
+        <p id="description-personal-infos">
+          We wnat to get to know you! Please enter your personal information.
+        </p>
+
+        <fieldset aria-describedby="description-personal-infos">
+          <legend>Personal information</legend>
+          <label for="first-name">First Name:</label>
+          <input type="text" id="first-name" />
+
+          <label for="last-name">Last Name:</label>
+          <input type="text" id="last-name" />
+
+          <label for="your-birthday">Your Birthday:</label>
+          <input type="date" id="your-birthday" />
+        </fieldset>
+
+        <p id="description-unwanted-ads">
+          Can you tell us a little bit more? We want to annoy you with unwanted
+          ads.
+        </p>
+
+        <fieldset aria-describedby="description-unwanted-ads">
+          <legend>Further Information</legend>
+
+          <label for="favorite-color">Favorite Color:</label>
+          <input type="color" id="favorite-color" value="#E5430F" />
+
+          <label for="favorite-pet">What's your favorite pet?</label>
+          <select id="favorite-pet">
+            <option value="">--Please choose an option--</option>
+            <option value="pet-1">Agra Cadabra</option>
+            <option value="pet-2">Chicken Turtle</option>
+            <option value="pet-3">Fried Egg Jellyfish</option>
+          </select>
+        </fieldset>
+
+        <button type="button" aria-label="Sumbit Button">Submit</button>
+      </fieldset>
+    </form>
+  </body>
 </html>
