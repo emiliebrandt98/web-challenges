@@ -10,10 +10,14 @@ console.clear();
 
 // --v-- write your code here --v--
 const bookTitle = "Mobydick";
-const bookAuthor = "Herman Melville";
-let bookRating = 4.5;
-let bookCopys = 4500;
+const bookAuthor = "Jane Doe";
+const bookRating = 4.1;
+const bookCopies = 2500;
 
+console.log(bookTitle);
+console.log(bookAuthor);
+console.log(bookRating);
+console.log(bookCopies);
 // --^-- write your code here --^--
 
 /*
@@ -31,12 +35,7 @@ Then:
 */
 
 // --v-- write your code here --v--
-logBookData();
 
-bookRating = 4.7;
-bookCopys += 250;
-
-logBookData();
 // --^-- write your code here --^--
 
 /*
@@ -49,14 +48,5 @@ logBookData();
 */
 
 // --v-- write your code here --v--
-function logBookData() {
-  console.log(
-    bookTitle + ", " + bookAuthor + ", " + bookRating + ", " + bookCopys,
-  );
-}
 
-bookCopys += 500;
-logBookData();
-bookCopys += 650;
-logBookData();
 // --^-- write your code here --^--
