@@ -11,13 +11,11 @@ console.clear();
 // --v-- write your code here --v--
 const bookTitle = "Mobydick";
 const bookAuthor = "Jane Doe";
-const bookRating = 4.1;
-const bookCopies = 2500;
+let bookRating = 4.1;
+let bookCopies = 2500;
 
 console.log(bookTitle);
 console.log(bookAuthor);
-console.log(bookRating);
-console.log(bookCopies);
 // --^-- write your code here --^--
 
 /*
@@ -35,6 +33,9 @@ Then:
 */
 
 // --v-- write your code here --v--
+bookRating += 0.5;
+bookCopies = bookCopies * 2;
+logBookData();
 
 // --^-- write your code here --^--
 
@@ -48,5 +49,15 @@ Then:
 */
 
 // --v-- write your code here --v--
+function logBookData() {
+  console.log(
+    bookTitle + ", " + bookAuthor + ", " + bookRating + ", " + bookCopies,
+  );
+}
 
+bookCopies = bookCopies + 2500;
+logBookData();
+
+bookCopies = bookCopies + 500;
+logBookData();
 // --^-- write your code here --^--
