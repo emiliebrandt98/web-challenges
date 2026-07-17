@@ -95,6 +95,7 @@ button:hover {
   background-color: var(--secondary);
   transition: 300ms ease-in-out;
 }
+
 .hoverButton:hover {
   transform: scale(1.1);
 }
@@ -113,12 +114,4 @@ button:hover {
   z-index: 2;
   /* To position the slide-in box */
   /* overflow: hidden; */
-}
-
-.slideInBox {
-  transform: translateX(500px);
-  transition: 300ms ease-in-out;
-}
-.slideInBox.active {
-  transform: translateX(0);
 }

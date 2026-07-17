@@ -86,7 +86,7 @@ The button that you are working with as an id attribute set in  #hoverButton*/
 ---------------------------------------------------------------- */
 
 .slideInBox {
-  position: absolute;
+  position: relative;
   top: 0;
   right: 0;
   width: 70%;
@@ -99,7 +99,17 @@ The button that you are working with as an id attribute set in  #hoverButton*/
   font-weight: bold;
   color: #333;
   margin-top: 15px;
+  transform: translateX(100%);
+  transition: 300ms ease-in-out;
   /* Write here your solution */
   /* Hides it initially to the right */
   /* Smooth slide transition */
+}
+
+.slideInBox {
+  transform: translateX(150%);
+  transition: 300ms ease-in-out;
+}
+.slideInBox.active {
+  transform: translateX(0);
 }
