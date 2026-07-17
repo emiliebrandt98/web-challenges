@@ -9,6 +9,8 @@ let currentColorIndex = 0;
 
 changeColorButton.addEventListener("click", () => {
   // Add your solution below
+  colorChangeCard.style.backgroundColor = colors[currentColorIndex];
+  currentColorIndex = (currentColorIndex + 1) % 5;
 });
 
 /*  -----------------------------------------------------------
@@ -22,13 +24,13 @@ changeColorButton.addEventListener("click", () => {
             Challenge 3: Loading Spinner Toggle
 ---------------------------------------------------------------- */
 const toggleLoaderButton = document.querySelector(
-  "[data-js=toggleLoaderButton]"
+  "[data-js=toggleLoaderButton]",
 );
 const loaderContainer = document.querySelector("[data-js=loaderContainer]");
 let loaderActive = false;
 
 toggleLoaderButton.addEventListener("click", () => {
-  // Add your solution below
+  loaderContainer.classList.toggle("active");
 });
 
 /*  -----------------------------------------------------------
@@ -38,5 +40,5 @@ const slideInButton = document.querySelector("[data-js=slideInButton]");
 const slideInBox = document.querySelector("[data-js=slideInBox]");
 
 slideInButton.addEventListener("click", () => {
-  // Add your solution below
+  slideInBox.classList.toggle("active");
 });

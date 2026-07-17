@@ -66,10 +66,19 @@ The button that you are working with as an id attribute set in  #hoverButton*/
   height: 50px;
 
   /* Write here your solution with the spinning animation */
+  animation: spin 1s;
+  animation-iteration-count: infinite;
 }
 
 /* Add to the keyframes the transformation */
 @keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /*  -----------------------------------------------------------
