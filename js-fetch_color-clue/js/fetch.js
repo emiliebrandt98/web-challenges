@@ -19,7 +19,7 @@ export async function fetchNewColor() {
 
   // --v-- your code here --v--
 
-  const response = await fetch(`https://www.thecolorapi.com/id?hex=${hexCode}`);
+  const response = await fetch(colorApiUrl);
   const data = await response.json();
   // console.log(data);
 
