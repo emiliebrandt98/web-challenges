@@ -19,5 +19,10 @@ export async function fetchNewColor() {
 
   // --v-- your code here --v--
 
+  const response = await fetch(`https://www.thecolorapi.com/id?hex=${hexCode}`);
+  const data = await response.json();
+  // console.log(data);
+
+  setColorToGuess(data.name.closest_named_hex, data.name.value);
   // --^-- your code here --^--
 }
