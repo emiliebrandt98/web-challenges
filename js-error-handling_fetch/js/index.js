@@ -9,9 +9,16 @@ async function fetchUserData(url) {
     const response = await fetch(url, {
       headers: { "x-api-key": "reqres_c0aaf46c1fa2400e8fb8669bacd63171" },
     });
+    // fetch wirft bei einem 404 (oder anderen Fehler-Status) KEINEN Fehler,
+    // deshalb müssen wir response.ok selbst prüfen und den Fehler manuell auslösen
+    if (response.ok === false) {
+      throw new Error(`Status Code: ${response.status}`);
+    }
 
     return await response.json();
   } catch (error) {
+    // fängt sowohl Netzwerkfehler (z. B. keine Internetverbindung)
+    // als auch den oben manuell geworfenen Fehler (Status nicht ok) ab
     return { error: error.message };
   }
 }
@@ -32,9 +39,12 @@ endpoints.forEach((endpoint) => {
     const result = await fetchUserData(endpoint.url);
 
     if (result.error) {
+      // Fehlerfall: Fehlermeldung anzeigen, User-Bereich leeren
       errorElement.textContent = result.error;
       userElement.innerHTML = "No user data available.";
     } else {
+      // Erfolgsfall: User-Daten anzeigen, alte Fehlermeldung entfernen
+
       const user = result.data;
       userElement.innerHTML = `
       <img alt="${user.first_name} ${user.last_name}" src="${user.avatar}" class="user__image"/>
