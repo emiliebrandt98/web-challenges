@@ -3,5 +3,11 @@ export default function App() {
 }
 
 function Sum({ valueA, valueB }) {
-  return valueA + valueB;
+  const result = { valueA } + { valueB };
+  return (
+    <p>
+      {" "}
+      {valueA} + {valueB} = {result}
+    </p>
+  );
 }

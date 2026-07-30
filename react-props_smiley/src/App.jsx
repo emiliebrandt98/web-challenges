@@ -3,5 +3,5 @@ export default function App() {
 }
 
 function Smiley({ isHappy }) {
-  return isHappy ? "😄" : "😭";
+  return <p>{isHappy ? "😄" : "😭"}</p>;
 }
