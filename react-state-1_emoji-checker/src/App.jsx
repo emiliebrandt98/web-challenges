@@ -4,6 +4,7 @@ import { useState } from "react";
 export default function App() {
   // let code = "?";
   const [code, setCode] = useState("");
+  console.log(code);
 
   const validCode = "🐡🐠🐋";
 
