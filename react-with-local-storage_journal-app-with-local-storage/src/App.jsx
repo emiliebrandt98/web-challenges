@@ -1,4 +1,4 @@
-import { useState } from "react";
+import useLocalStorageState from "use-local-storage-state";
 import "./App.css";
 import EntriesSection from "./components/EntriesSection";
 import EntryForm from "./components/EntryForm";
@@ -37,8 +37,14 @@ const initialEntries = [
 ];
 
 function App() {
-  const [entries, setEntries] = useState(initialEntries);
-  const [filter, setFilter] = useState("all"); // "all" or "favorites"
+  // const [entries, setEntries] = useState(initialEntries);
+  // const [filter, setFilter] = useState("all");
+  const [entries, setEntries] = useLocalStorageState("entries", {
+    defaultValue: initialEntries,
+  });
+  const [filter, setFilter] = useLocalStorageState("filter", {
+    defaultValue: "all",
+  });
 
   function handleAddEntry(newEntry) {
     const date = new Date().toLocaleDateString("en-us", {
@@ -50,8 +56,8 @@ function App() {
   function handleToggleFavorite(id) {
     setEntries(
       entries.map((entry) =>
-        entry.id === id ? { ...entry, isFavorite: !entry.isFavorite } : entry
-      )
+        entry.id === id ? { ...entry, isFavorite: !entry.isFavorite } : entry,
+      ),
     );
   }
 
