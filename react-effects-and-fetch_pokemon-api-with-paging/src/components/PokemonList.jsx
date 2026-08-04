@@ -21,7 +21,7 @@ export default function PokemonList() {
 
     loadPokemon();
   }, [offset]);
-  // Dependence Array: "Falls sich offset änder, lade loadPokemon neu"
+  // Dependence Array: "Falls sich offset ändert, lade loadPokemon neu"
 
   function handleNextPage() {
     setOffset(offset + 20);

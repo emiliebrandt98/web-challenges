@@ -26,7 +26,3 @@ export default function PokemonList() {
     </main>
   );
 }
-
-// <button type="button" onClick={loadPokemon}>
-//   Load Pokémon
-// </button>

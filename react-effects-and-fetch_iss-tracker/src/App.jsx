@@ -15,16 +15,30 @@ export default function App() {
     try {
       const response = await fetch(URL);
       const data = await response.json();
-      setCoords(data);
+
+      setCoords({
+        longitude: Number(data.longitude),
+        latitude: Number(data.latitude),
+      });
     } catch (error) {
       console.log(error);
     }
   }
 
+  // useEffect(() => {
+  //   // setInterval() startet sofort und läuft alle 5 Sekunden weiter
+  //   const intervalID = setInterval(getISSCoords(),
+
+  //   // stoppt die setInterval-Funktion
+  //   return () => {
+  //     clearInterval(intervalID);
+  //   },
+  //   5000);
+  // );[];
+
   useEffect(() => {
-    // setInterval() startet sofort und läuft alle 5 Sekunden weiter
     const intervalID = setInterval(getISSCoords, 5000);
-    // stoppt die setInterval-Funktion
+
     return () => {
       clearInterval(intervalID);
     };
