@@ -1,26 +1,37 @@
+import { useState } from "react";
 import "./StatusCheck.css";
 
 const apiStatusUrl = "https://example-apis.vercel.app/api/status";
 
 export default function StatusCheck() {
-  const statusIcon = "⁉️";
-  // Something needs to change here…
-  // ↙️
+  // const statusIcon = "⁉️";
+  const [statusIcon, setStatusIcon] = useState("⁉️");
+
   function handleCheckApiStatus() {
-    /**
-     * Hint 1:
-     * Use the `fetch()` function to send a request to `apiStatusUrl`.
-     *
-     * Hint 2:
-     * The `fetch()` function returns a promise that resolves to a Response
-     * object.
-     *
-     * Hint 3:
-     * The Response object has a `ok` property which is true if the response
-     * is okay and false if it is not.
-     **/
-    // --v-- write your code here --v--
-    // --^-- write your code here --^--
+    async function apiStatus() {
+      try {
+        // Es wird gewartet bis wir ein "response" bekommen
+        setStatusIcon("⏳");
+
+        const response = await fetch(apiStatusUrl);
+
+        // Wenn response.ok ist und wenn es nicht ok ist.
+        if (response.ok) {
+          setStatusIcon("✅");
+        } else {
+          setStatusIcon("❌");
+        }
+
+        // Wird hier in der Aufgabe nicht gebraucht
+        const data = await response.json();
+        return { data: data };
+
+        //API kann nicht abgerufen werden.
+      } catch (error) {
+        setStatusIcon("🚨");
+      }
+    }
+    apiStatus();
   }
 
   return (
