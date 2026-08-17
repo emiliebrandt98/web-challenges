@@ -8,10 +8,59 @@ jest.mock("next/router", () => ({
   },
 }));
 
-test("renders two input fields and a button", () => {});
+test("renders two input fields and a button", () => {
+  render(<GameForm />);
 
-test("renders a form with the accessible name 'Create a new game'", () => {});
+  const inputs = screen.getAllByRole("textbox");
+  const button = screen.getByRole("button", { name: "Create game" });
 
-test("submits the correct form data when every field is filled out", async () => {});
+  expect(inputs).toHaveLength(2);
+  expect(button).toBeInTheDocument();
+});
 
-test("does not submit form if one input field is left empty", async () => {});
+test("renders a form with the accessible name 'Create a new game'", () => {
+  render(<GameForm />);
+
+  const form = screen.getByRole("form", { name: "Create a new game" });
+
+  expect(form).toBeInTheDocument();
+});
+
+test("submits the correct form data when every field is filled out", async () => {
+  // Create mock function
+  const handleSubmit = jest.fn();
+  const user = userEvent.setup();
+
+  render(<GameForm onCreateGame={handleSubmit} />);
+
+  const nameInput = screen.getByRole("textbox", { name: "Name of game" });
+  const playersInput = screen.getByRole("textbox", {
+    name: "Player names, separated by comma",
+  });
+  const submitButton = screen.getByRole("button", { name: "Create game" });
+
+  await user.type(nameInput, "Dodelido");
+  await user.type(playersInput, "John Doe, Jane Doe");
+  await user.click(submitButton);
+
+  expect(handleSubmit).toHaveBeenCalledWith({
+    nameOfGame: "Dodelido",
+    playerNames: ["John Doe", "Jane Doe"],
+  });
+});
+
+test("does not submit form if one input field is left empty", async () => {
+  // Create mock function
+  const handleSubmit = jest.fn();
+  const user = userEvent.setup();
+
+  render(<GameForm onCreateGame={handleSubmit} />);
+
+  const nameInput = screen.getByRole("textbox", { name: "Name of game" });
+  const submitButton = screen.getByRole("button", { name: "Create game" });
+
+  await user.type(nameInput, "Dodelido");
+  await user.click(submitButton);
+
+  expect(handleSubmit).not.toHaveBeenCalled();
+});
