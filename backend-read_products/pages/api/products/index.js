@@ -26,13 +26,9 @@ export default async function handler(request, response) {
       // Erstellt ein neues Produkt-Dokument in der MongoDB-Datenbank mit diesen Daten
       await Product.create(productData);
 
-      // HTTP Status 201 (Created) zurückgeben, um die erfolgreiche Erstellung zu bestätigen
       response.status(201).json({ status: "Product created" });
     } catch (error) {
-      // Falls z. B. Validierungsfehler auftreten (ein required-Feld fehlt), den Fehler in der Konsole loggen
       console.log(error);
-
-      // HTTP Status 400 (Bad Request) senden und die konkrete Fehlermeldung an den Client zurückgeben
       response.status(400).json({ error: error.message });
     }
 
