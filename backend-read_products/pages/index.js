@@ -1,5 +1,6 @@
-import ProductList from "@/components/ProductList";
 import styled from "styled-components";
+import ProductList from "@/components/ProductList";
+import ProductForm from "@/components/ProductForm";
 
 export default function HomePage() {
   return (
@@ -10,6 +11,8 @@ export default function HomePage() {
         </span>
         Fish Shop
       </Heading>
+      <ProductForm />
+      <hr />
       <ProductList />
     </>
   );
